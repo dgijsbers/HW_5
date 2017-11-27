@@ -27,7 +27,7 @@ app.config['SECRET_KEY'] = 'hardtoguessstringfromsi364(thisisnotsupersecure)'
 
 ## TODO: Create database and change the SQLAlchemy Database URI.
 ## Your Postgres database should be your uniqname, plus HW5, e.g. "jczettaHW5" or "maupandeHW5"
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://localhost/demgijsHW5"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://localhost/demgijsHW5"
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -60,7 +60,6 @@ manager.add_command("shell", Shell(make_context=make_shell_context))
 def send_async_email(app, msg):
     with app.app_context():
         mail.send(msg)
-
 
 def send_email(to, subject, template, **kwargs):
     msg = Message(app.config['MAIL_SUBJECT_PREFIX'] + ' ' + subject,
